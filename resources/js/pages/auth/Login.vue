@@ -53,6 +53,7 @@ defineProps<{
                     name="email"
                     required
                     autofocus
+                    default-value="test@example.com"
                     :tabindex="1"
                     autocomplete="email"
                     placeholder="email@example.com"
@@ -76,6 +77,7 @@ defineProps<{
                     id="password"
                     name="password"
                     required
+                    default-value="password"
                     :tabindex="2"
                     autocomplete="current-password"
                     placeholder="Password"
