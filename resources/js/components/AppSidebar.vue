@@ -4,6 +4,7 @@ import {
     BookOpen,
     FolderGit2,
     LayoutGrid,
+    PanelsTopLeft,
     ShieldCheck,
     Users,
 } from '@lucide/vue';
@@ -24,6 +25,7 @@ import {
 import { dashboard } from '@/routes';
 import { edit as roles } from '@/routes/system/roles';
 import { index as users } from '@/routes/system/users';
+import { widgets } from '@/routes/system';
 import { usePermissions } from '@/system/access/usePermissions';
 import type { NavItem } from '@/types';
 
@@ -35,6 +37,9 @@ const mainNavItems = computed<NavItem[]>(() => [
         : []),
     ...(can('role.view')
         ? [{ title: 'Роли', href: roles(), icon: ShieldCheck }]
+        : []),
+    ...(can('widget.view')
+        ? [{ title: 'Виджеты', href: widgets(), icon: PanelsTopLeft }]
         : []),
 ]);
 
